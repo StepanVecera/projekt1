@@ -1,12 +1,3 @@
-/* Defines -----------------------------------------------------------*/
-// #define SW PD2
-// #define Xin PC0
-// #define Yin PC1
-#define EDT PB4
-#define ECLK PB5
-// #ifndef F_CPU
-// # define F_CPU 16000000  // CPU frequency in Hz required for UART_BAUD_SELECT
-// #endif
 
 /*
 https://docs.arduino.cc/static/6ec5e4c2a6c0e9e46389d4f6dc924073/2f891/Pinout-UNOrev3_latest.png
@@ -26,14 +17,6 @@ hlava ŠIMONA BUCHTY a  ŠTĚPÁNA VEČEŘI
 #include <stdlib.h>         // C library. Needed for number conversions
 #include <lcd.h>            // Peter Fleury's LCD library
 
-
-// #define PC0 14
-// #define PC1 15
-// #define PD2 2
-#define PB4 12
-#define PB5 13
-
-
 static uint8_t axis = 0;      //axis determines if we measure X or Y value of 0 means x, 1 means y
 static uint8_t posx = 0;
 static uint8_t posy = 0;
@@ -41,13 +24,12 @@ int Val;
 static uint8_t lastA;
 static uint8_t currA;      //encoder CLK 
 static uint8_t B;     //encoder DT
-static int8_t counter = 0; 
+static int8_t counter = 64; 
+static int8_t lastcounter = 64;
+static int8_t button = 1;
 
 int main(void)
 {
-    // Initialize I2C (TWI)
-    //twi_init();
-
     // Initialize USART to asynchronous, 8N1, 9600
     uart_init(UART_BAUD_SELECT(9600, F_CPU));
 
@@ -69,19 +51,20 @@ int main(void)
     // Set prescaler to 33 ms and enable interrupt
     TIM1_overflow_33ms();
     TIM1_overflow_interrupt_enable();
-    TIM2_overflow_16us(); 
+
+    TIM2_overflow_2ms();
     TIM2_overflow_interrupt_enable();
     // Enables interrupts by setting the global interrupt mask
     lcd_init(LCD_DISP_ON_CURSOR_BLINK);
     lcd_gotoxy(0, 0);                 //starting position is left up
 
-    GPIO_mode_input_nopull(&DDRB, EDT);
-    GPIO_mode_input_nopull(&DDRB, ECLK);
+    GPIO_mode_input_nopull(&DDRB, PB4);      //encoder DT
+    GPIO_mode_input_nopull(&DDRB, PB5);      //encoder clock
+    GPIO_mode_input_pullup(&DDRB, PB3);         //switch
 
-    lastA = GPIO_read(&PINB, ECLK);
+    lastA = GPIO_read(&PINB, PB5);
 
     sei();
-
     // Infinite loop
     while (1)
     {
@@ -115,20 +98,17 @@ ISR(TIMER1_OVF_vect)
     }
     ADCSRA |= (1<<ADSC);
   }
-    //lcd_gotoxy(posx, posy);
-    // Start ADC conversion
 }
 
 ISR(ADC_vect)
 {
- //char string[3];
-
  Val = ADC;
 
 if (axis == 0)
     {
       if (Val <10){                 //go right
-        posx = posx + 1;            
+        posx = posx + 1;   
+        counter = 65;         
         if (posx == 16){            //there is only 15 positions on the display
           posx = 0;
         }
@@ -136,9 +116,11 @@ if (axis == 0)
      else if (Val > 900){            //go left
         if (posx  == 0){           
           posx = 15;
+          counter = 65;
         }
         else {
           posx = posx - 1;
+          counter = 65;
         }
         }
     }
@@ -148,18 +130,22 @@ if (axis == 1)
       if (Val <10){             //go down
         if (posy == 0){
           posy = 1;
+          counter = 65;
         }
         else {
           posy = 0;
+          counter = 65;
         }
         
       }
      else if (Val > 900){       //go up
         if (posy == 0){
           posy = 1;
+          counter = 65;
         }
         else {
           posy = 0;
+          counter = 65;
         }
       }
       }
@@ -167,25 +153,28 @@ lcd_gotoxy(posx, posy);
 } 
 
 ISR(TIMER2_OVF_vect){
-  char string[8];
-  currA = GPIO_read(&PINB, ECLK);
-  B = GPIO_read(&PINB, EDT);
+  //char string[8];
+  currA = GPIO_read(&PINB, PB5);
+  B = GPIO_read(&PINB, PB4);
 
   if (currA != lastA  && currA == 1){
     if (B != currA){
-      counter --;
+      counter ++;                   //rotating clockwise adds to counter
     }
     else {
-      counter ++;
+      counter --;                   //rotating counter clockwise decreases counter
     }
   }
+
   lastA = currA;
-  itoa(counter, string, 10);
-  uart_puts(string);
 
-  // itoa(A, string, 10);
-  // uart_puts(string);
-  // itoa(B, string, 10);
-  // uart_puts(string);
+  button = GPIO_read(&DDRB, PB3); 
 
+  if (counter != lastcounter){
+    //itoa(counter, string, 10);
+    lcd_gotoxy(posx, posy);
+    //lcd_puts(string);
+    lcd_putc(counter);
+    lastcounter = counter;
+  }
 }
