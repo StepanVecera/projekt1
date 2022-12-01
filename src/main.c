@@ -173,7 +173,7 @@ ISR(TIMER2_OVF_vect){
   if (counter != lastcounter){
     //itoa(counter, string, 10);
     lcd_gotoxy(posx, posy);
-    //lcd_puts(string);
+    //lcd_puts(string); //ay
     lcd_putc(counter);
     lastcounter = counter;
   }
