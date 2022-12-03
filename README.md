@@ -30,7 +30,7 @@ LCD is an electronic device which is used for display any ASCII text. Our screen
 
 **Rotary encoder**
 
-A rotary encoder is a type of position sensor that converts the angular position (rotation) of a knob into an output signal that is used to determine which direction the knob is being turned. Rotary encoders are the modern digital equivalent of potentiometers. There are five pins on our module. Voltage supply pin (5 V), ground pin, SW pin,  witch is switch output, CLK and  DT pins. The last two mentioned pins are the important pins, whitch we use to determine direction of rotation and also by how many positions we moved the encoder. The explenation of how rotary encoder works is in reference [5](https://lastminuteengineers.com/rotary-encoder-arduino-tutorial/).
+A rotary encoder is a type of position sensor that converts the angular position (rotation) of a knob into an output signal that is used to determine which direction the knob is being turned. Rotary encoders are the modern digital equivalent of potentiometers. There are five pins on our module. Voltage supply pin (5 V), ground pin, SW pin,  witch is switch output, CLK and  DT pins. The last two mentioned pins are the important pins, whitch we use to determine direction of rotation and also by how many positions we moved the encoder. The explenation of how rotary encoder works is in reference [5](https://lastminuteengineers.com/rotary-encoder-arduino-tutorial/). In our project we use rotary encoder to increase or decrease counter, whitch coresponds to displayed ASCII character on LCD screen.
 
 
 ![proj1](https://user-images.githubusercontent.com/99388270/205443658-335ce68c-a830-44b2-9632-2efbb14b69a3.jpg)
