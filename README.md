@@ -55,5 +55,5 @@ Insert a link to a short video with your practical implementation example (1-3 m
 
 ## References
 
-1. Write your text here.
+1. [I'm an inline-style link](https://www.google.com)
 2. ...
