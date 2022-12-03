@@ -41,7 +41,7 @@ Joystick is an input device. It consists of two potentiometers and a push button
 
 **Digilent PmodCLP LCD module**
 
-LCD is an electronic device which is used for display any ASCII text. Our screen size is 16x2 characters. This module has 18 pins. 8 pins are used for data transfer. 3 pins, whitch are internally conected,  supply voltage (5 V). 3 pins supply ground. These are also internally conected. And last 4 pins are for Register select, R/W, R/W enable and optional back-light enable.
+LCD is an electronic device which is used for display any ASCII text. Our screen size is 16x2 characters. This module has 18 pins. 8 pins are used for data transfer. 3 pins, whitch are internally conected,  supply voltage (5 V). 3 pins supply ground. These are also internally conected. And last 4 pins are for Register select, R/W, R/W enable and optional back-light enable. We can use PmodCLP reference manual [4] to locate these pins.
 
 
 
@@ -55,5 +55,7 @@ Insert a link to a short video with your practical implementation example (1-3 m
 
 ## References
 
-1. [I'm an inline-style link](https://www.google.com)
-2. ...
+1. [Arduino pinout](https://docs.arduino.cc/static/6ec5e4c2a6c0e9e46389d4f6dc924073/2f891/Pinout-UNOrev3_latest.png)
+2. [ATmega 328 Datasheet](https://www.microchip.com/en-us/product/ATmega328p)
+3. [Joystick](https://components101.com/sites/default/files/component_datasheet/Joystick%20Module.pdf)
+4. [PmodCLP reference manual](https://digilent.com/reference/_media/pmod:pmod:pmodCLP_rm.pdf)
