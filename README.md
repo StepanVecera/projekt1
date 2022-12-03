@@ -33,8 +33,13 @@ The goal of the project is cooperation in pairs, further study of the topic, des
 *  Štěpán Večeřa (coding, )
 
 ## Hardware description
+**joystick**
 
-Insert descriptive text and schematic(s) of your implementation.
+Joystick is an input device. It consists of two potentiometers and a push button. The potentiometers indicate in whitch direction is the joystick being pushed. this device has five pins. three of whitch are inputs to Arduino, while the remaining two supply voltage and ground. The graphic below shows the X and Y directions and also gives an indication of how the outputs will respond when the joystick is pushed in various directions.
+
+![joystick](https://user-images.githubusercontent.com/99388270/205435527-94b1b353-9a05-48d7-9741-ecba4a571a7a.png)
+
+
 
 ## Software description
 
