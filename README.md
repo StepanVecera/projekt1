@@ -35,14 +35,16 @@ The goal of the project is cooperation in pairs, further study of the topic, des
 ## Hardware description
 **joystick**
 
-Joystick is an input device. It consists of two potentiometers and a push button. The potentiometers indicate in whitch direction is the joystick being pushed. this device has five pins. three of whitch are inputs to Arduino, while the remaining two supply voltage (5 V) and ground. The graphic below shows the X and Y directions and also gives an indication of how the outputs will respond when the joystick is pushed in various directions.
+Joystick is an input device. It consists of two potentiometers and a push button. The potentiometers indicate in whitch direction is the joystick being pushed. this device has five pins. three of whitch are inputs to Arduino, while the remaining two supply voltage (5 V) and ground. The graphic below shows the X and Y directions and also gives an indication of how the outputs will respond when the joystick is pushed in various directions. In our project, we use joystick to move around LCD screen.
 
 ![joystick](https://user-images.githubusercontent.com/99388270/205435527-94b1b353-9a05-48d7-9741-ecba4a571a7a.png)
 
 **Digilent PmodCLP LCD module**
 
-LCD is an electronic device which is used for display any ASCII text. Our screen size is 16x2 characters. This module has 18 pins. 8 pins are used for data transfer. 3 pins, whitch are internally conected,  supply voltage (5 V). 3 pins supply ground. These are also internally conected. And last 4 pins are for Register select, R/W, R/W enable and optional back-light enable. We can use PmodCLP reference manual [4] to locate these pins.
+LCD is an electronic device which is used for display any ASCII text. Our screen size is 16x2 characters. This module has 18 pins. 8 pins are used for data transfer. 3 pins, whitch are internally conected,  supply voltage (5 V). 3 pins supply ground. These are also internally conected. And last 4 pins are for Register select, R/W, R/W enable and optional back-light enable. We can use PmodCLP reference manual [4](https://digilent.com/reference/_media/pmod:pmod:pmodCLP_rm.pdf) to locate these pins. In our project, we use this module to display text.
 
+**Rotary encoder**
+A rotary encoder is a type of position sensor that converts the angular position (rotation) of a knob into an output signal that is used to determine which direction the knob is being turned. Rotary encoders are the modern digital equivalent of potentiometers. There are five pins on our module. Voltage supply pin (5 V), ground pin, SW pin,  witch is switch output, CLK and  DT pins. The last two mentioned pins are the important pins, whitch we use to determine direction of rotation and also by how many positions we moved the encoder. The explenation of how rotary encoder works is in reference [5](https://lastminuteengineers.com/rotary-encoder-arduino-tutorial/)
 
 
 ## Software description
@@ -59,3 +61,4 @@ Insert a link to a short video with your practical implementation example (1-3 m
 2. [ATmega 328 Datasheet](https://www.microchip.com/en-us/product/ATmega328p)
 3. [Joystick](https://components101.com/sites/default/files/component_datasheet/Joystick%20Module.pdf)
 4. [PmodCLP reference manual](https://digilent.com/reference/_media/pmod:pmod:pmodCLP_rm.pdf)
+5. [Rotary encoder](https://lastminuteengineers.com/rotary-encoder-arduino-tutorial/)
