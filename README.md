@@ -12,21 +12,6 @@ The goal of the project is cooperation in pairs, further study of the topic, des
 
 * The source code for the AVR must be written in C and/or Assembly and must be implementable on Arduino Uno board using toolchains from the semester, ie PlatformIO and not the Arduino-style. No other development tools are allowed.
 
-## Recommended GitHub repository structure
-
-   ```c
-   YOUR_PROJECT        // PlatfomIO project
-   ├── include         // Included files
-   ├── lib             // Libraries
-   ├── src             // Source file(s)
-   │   └── main.c
-   ├── test            // No need this
-   ├── platformio.ini  // Project Configuration File
-   └── README.md       // Report of this project
-   ```
-
-## Recommended README.md file structure
-
 ### Team members
 
 *  Šimon Buchta (coding, wireing)
@@ -67,3 +52,4 @@ Insert a link to a short video with your practical implementation example (1-3 m
 3. [Joystick](https://components101.com/sites/default/files/component_datasheet/Joystick%20Module.pdf)
 4. [PmodCLP reference manual](https://digilent.com/reference/_media/pmod:pmod:pmodCLP_rm.pdf)
 5. [Rotary encoder](https://lastminuteengineers.com/rotary-encoder-arduino-tutorial/)
+6. [Github](https://github.com/tomas-fryza/digital-electronics-2)
