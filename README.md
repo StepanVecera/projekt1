@@ -35,7 +35,7 @@ A rotary encoder is a type of position sensor that converts the angular position
 
 ![proj1](https://user-images.githubusercontent.com/99388270/205443658-335ce68c-a830-44b2-9632-2efbb14b69a3.jpg)
 
-Schematic of our prijects wireing.
+Schematic of our projects wireing.
 
 ## Software description
 
