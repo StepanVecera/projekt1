@@ -14,7 +14,7 @@ The goal of the project is cooperation in pairs, further study of the topic, des
 
 ### Team members
 
-*  Šimon Buchta (coding, wireing)
+*  Šimon Buchta (coding, wireing, flow charts)
 *  Štěpán Večeřa (coding, readme)
 
 ## Hardware description
@@ -42,7 +42,7 @@ Schematic of our prijects wireing.
 **timer.h**
 
 This library is used in our project to set prescalers for clock signal and to enable interrupt caused by ovrflowing of timer.
-You can see our library [here](https://github.com/StepanVecera/projekt1/blob/master/include/timer.h)
+You can see our library [here](https://github.com/StepanVecera/projekt1/blob/master/include/timer.h).
 
 **gpio.h**
 
@@ -50,13 +50,17 @@ This library is for declaring  functions whitch are defined in [gpio.c](https://
 
 **lcd.h**
 
-This library is taken from Peter Fleury.
+This library is taken from Peter Fleury. This file is declaring functions, whitch are defined in [lcd.c](https://github.com/StepanVecera/projekt1/blob/master/lib/lcd/lcd.c). In this folder we can also see file [lcd_definitions.h](https://github.com/StepanVecera/projekt1/blob/master/lib/lcd/lcd_definitions.h). This file defines on witch pins are for transfering data and witch are for controling signals.
+
+**uart.h**
+
+[This](https://github.com/StepanVecera/projekt1/tree/master/lib/uart)  library is not actually used in our project. We used it for serial monitor to see, what values we get from joystick and rotary encoder.
+
+All of these libraries were used in PC classes.
 
 ![DE2-PROJEKT1-TIMER1_OVF_VCT-S](https://user-images.githubusercontent.com/99410540/206112950-6045a215-460e-4cbd-a96f-9c0859c54237.png)
 ![DE2-PROJEKT1-TIMER2_OVF_VCT](https://user-images.githubusercontent.com/99410540/206112972-7bb3beee-6e0a-4fcf-9bc0-9f93f711092a.png)
 ![DE2-PROJEKT1-ADC_VCT](https://user-images.githubusercontent.com/99410540/206113000-ff797374-94f5-4ee2-ae51-c8c73b680c17.png)
-
-Put flowchats of your algorithm(s). Write descriptive text of your libraries and source files. Put direct links to these files in `src` or `lib` folders.
 
 ## Video
 
