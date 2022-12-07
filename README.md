@@ -40,15 +40,21 @@ Schematic of our prijects wireing.
 ## Software description
 
 **timer.h**
-This library is used in our project to set prescalers for clock signal and to enable interrupt caused by ovrflowing of timer.
-![DE2-PROJEKT1-TIMER1_OVF_VCT-S](https://user-images.githubusercontent.com/99410540/206112950-6045a215-460e-4cbd-a96f-9c0859c54237.png)
-![DE2-PROJEKT1-TIMER2_OVF_VCT](https://user-images.githubusercontent.com/99410540/206112972-7bb3beee-6e0a-4fcf-9bc0-9f93f711092a.png)
-![DE2-PROJEKT1-ADC_VCT](https://user-images.githubusercontent.com/99410540/206113000-ff797374-94f5-4ee2-ae51-c8c73b680c17.png)
 
+This library is used in our project to set prescalers for clock signal and to enable interrupt caused by ovrflowing of timer.
 You can see our library [here](https://github.com/StepanVecera/projekt1/blob/master/include/timer.h)
 
 **gpio.h**
+
 This library is for declaring  functions whitch are defined in [gpio.c](https://github.com/StepanVecera/projekt1/blob/master/lib/gpio/gpio.c). We use this library to set pins as inputs and to read their value (1/0). 
+
+**lcd.h**
+
+This library is taken from Peter Fleury.
+
+![DE2-PROJEKT1-TIMER1_OVF_VCT-S](https://user-images.githubusercontent.com/99410540/206112950-6045a215-460e-4cbd-a96f-9c0859c54237.png)
+![DE2-PROJEKT1-TIMER2_OVF_VCT](https://user-images.githubusercontent.com/99410540/206112972-7bb3beee-6e0a-4fcf-9bc0-9f93f711092a.png)
+![DE2-PROJEKT1-ADC_VCT](https://user-images.githubusercontent.com/99410540/206113000-ff797374-94f5-4ee2-ae51-c8c73b680c17.png)
 
 Put flowchats of your algorithm(s). Write descriptive text of your libraries and source files. Put direct links to these files in `src` or `lib` folders.
 
