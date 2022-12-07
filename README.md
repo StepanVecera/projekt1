@@ -39,6 +39,13 @@ Schematic of our prijects wireing.
 
 ## Software description
 
+**timer.h**
+This library is used in our project to set prescalers for clock signal and to enable interrupt caused by ovrflowing of timer.
+You can see our library [here](https://github.com/StepanVecera/projekt1/blob/master/include/timer.h)
+
+**gpio.h**
+This library is for declaring  functions whitch are defined in [gpio.c](https://github.com/StepanVecera/projekt1/blob/master/lib/gpio/gpio.c). We use this library to set pins as inputs and to read their value (1/0). 
+
 Put flowchats of your algorithm(s). Write descriptive text of your libraries and source files. Put direct links to these files in `src` or `lib` folders.
 
 ## Video
